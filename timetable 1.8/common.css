@@ -1,0 +1,172 @@
+body{
+	background-image:url('images/old paper.png');
+	text-align: center;
+	font-size: 19%;
+	color:white;
+	background-color:#000000;
+	font-size: 190%;
+}
+
+.timerow1,.timerow2,.timerow3,.timerow4,.timerow5,.timerow6,.timerow7,.timerow8,.timerow9{text-align: left;}
+a{text-decoration:none;}
+td,th{padding:2px;margin:2px;}
+.half{width:50%}
+
+.headbar{
+	position:fixed;
+	top:0;
+	left:-5px;
+	width:100%;
+	padding:5px;
+	margin:0px;
+	min-width:661px;
+	border-bottom-style:solid;
+	border-width:1px;
+	z-index:0;
+}
+
+.table_container{
+	top:7%;
+	position:fixed;
+	left:10px;
+	padding:0px;
+	margin:0px;
+	width:99%;
+	height:auto;
+	min-width:661px;
+	z-index:0;
+}
+
+table{
+	padding:0px;
+	margin:0px;
+	width:100%;
+}
+
+.detail_pannel{
+	position:fixed;
+	top:60%;
+	right:5%;
+	font-size: 150%;
+	width:auto;
+	min-width:400px;
+	z-index:1;
+	display:none;
+	border-radius:25px;
+}
+
+.detail_pannel table{
+	padding:5px;
+	margin:5px;
+}
+
+.full_detail{
+	position:fixed;
+	margin:5px;
+	margin-left:10%;
+	height:auto;
+	min-height:300px;
+	width:80%;
+	padding:5px;
+	top:6%;
+	border-radius: 25px;
+	padding:0px;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	display:none;
+	z-index:2;
+}
+
+.full_detail .fulldetail_header{
+	position:relative;
+}
+
+.full_detail .fulldetail_subdivision{
+	text-align: left;
+	margin:30px;
+}
+/*menu structure*/
+.menu{
+	z-index:5;
+	position:fixed;
+	top:0;
+	right:0;
+	width:5px;
+	overflow:hidden;
+	height:100%;
+	display:inline-block;
+	opacity:0.0;
+	transition:width 0.4s,opacity 0.4s;
+	transition-delay:0.1s;
+}
+.menu_header{
+	top:0;
+	margin-right:25%;
+	width:100%;
+	padding:4px;
+}
+.menu_container{
+	z-index:5;
+	padding:5px;
+}
+.menu:hover{
+	width:20%;
+	opacity:1.0;
+	/*overflow:scroll;*/
+}
+
+/*Status bar*/
+.status_bar{
+	z-index:10;
+	border-radius:25px 0px 0px 0px;
+	position:fixed;
+	bottom:5%;
+	right:0;
+	display:none;
+	height:auto;
+	width:auto;
+	padding:5px;
+	margin:0px;
+	background-color:#ffffff;
+	border:2px solid black;
+}
+
+/*button structures*/
+.btnholder {
+	margin-top:1px;
+	margin-bottom:1px;
+	position:relative;
+	height:auto;
+	width:100%;
+	display:inline-block;
+}
+
+.nicebtn{
+	padding:12px;
+	border:1px;
+	border-style:solid;
+	width:100%;
+	font-size:28pt;
+}
+
+.menubtn{
+	margin:2px;
+	padding:12px;
+	border:1px;
+	border-style:solid;
+	height:auto;
+	width:100%;
+	border-radius:25px;
+	transition:font-size 0.3s;
+	transition-delay: 0.2s;
+	font-size: 100%;
+}
+
+.contextbtn{
+	padding:12px;
+	border:1px;
+	border-style:solid;
+	width:auto;
+	font-size:12pt;
+	transition:font-size 0.3s;transition-delay: 0.2s;
+}

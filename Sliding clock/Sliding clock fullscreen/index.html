@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <meta name="description" content="Blank website">
+    <meta name="keywords" content="none;nothing;ect;">
+    <meta name="author" content="Samuel A. Matheson">
+    <meta charset="utf-8">
+
+    <!--Style sheets-->
+    <style type="text/css">
+        @font-face {
+            src: url(/LexendDeca-Regular.ttf);
+            font-family: Minecrafter;
+        }
+
+        :root {
+            --text-color: rgb(255, 255, 255);
+            /* Variable for text color */
+            --background-color: rgb(0, 0, 0);
+            /* Variable for background color */
+            --accent-color: rgb(255, 255, 255);
+            /* Accent color */
+        }
+
+
+        /* Base layout */
+        body {
+            color: var(--text-color);
+            background-color: var(--background-color);
+            text-shadow: 0vh 0vh 0.5vh var(--accent-color);
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            margin: 0;
+            background-image: url('/Kj5cd8B.jpg');
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .jade_shade,
+        .jade_shade_top {
+            left: 0;
+            bottom: 0;
+            position: absolute;
+            height: 41vh;
+            width: 100vw;
+            /*background-color: rgba(0, 0, 0, 0.7);*/
+            z-index: 100;
+            background-image: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+        }
+
+        .jade_shade_top {
+            top: 0;
+            height: 39vh;
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+        }
+
+        .Clock_lock {
+            position: relative;
+            overflow: visible;
+            margin-top: 40vh;
+            width: 120vh;
+            margin-right: auto;
+            margin-left: auto;
+            height: 20vh;
+            max-height: 20vh;
+            font-family: Minecrafter;
+        }
+
+        .numberpannel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-align: center;
+            display: block;
+            height: 20vh;
+            line-height: 20vh;
+            font-size: 18vh;
+            font-family: inherit;
+            width: 14vh;
+            transition: transform 500ms;
+        }
+
+        .snumber_slide {
+            position: relative;
+            display: block;
+            height: 20vh;
+            font-size: 18vh;
+            font-family: inherit;
+            width: 14vh;
+            line-height: 20vh;
+            transition: opacity 500ms;
+        }
+    </style>
+    <!--Google font-->
+
+    <title>Sliding clock full</title>
+</head>
+
+<body class="">
+
+    <div class="Clock_lock">
+        <!--First of hour-->
+        <div class="numberpannel" id="hr1st">
+            <div class="snumber_slide" id="1sthr0">0</div>
+            <div class="snumber_slide" id="1sthr1">1</div>
+        </div>
+        <!--Second of hour-->
+        <div class="numberpannel" id="hr2t" style="left: 15vh;">
+            <div class="snumber_slide">0</div>
+            <div class="snumber_slide">1</div>
+            <div class="snumber_slide">2</div>
+            <div class="snumber_slide">3</div>
+            <div class="snumber_slide">4</div>
+            <div class="snumber_slide">5</div>
+            <div class="snumber_slide">6</div>
+            <div class="snumber_slide">7</div>
+            <div class="snumber_slide">8</div>
+            <div class="snumber_slide">9</div>
+        </div>
+        <div class="numberpannel" style="left: 28.5vh;width:4%">:</div>
+        <!--First of minute-->
+        <div class="numberpannel" id="min1st" style="left:33vh">
+            <div class="snumber_slide">0</div>
+            <div class="snumber_slide">1</div>
+            <div class="snumber_slide">2</div>
+            <div class="snumber_slide">3</div>
+            <div class="snumber_slide">4</div>
+            <div class="snumber_slide">5</div>
+        </div>
+        <!-- Second of minutes -->
+        <div class="numberpannel" id="min2st" style="left:47vh">
+            <div class="snumber_slide">0</div>
+            <div class="snumber_slide">1</div>
+            <div class="snumber_slide">2</div>
+            <div class="snumber_slide">3</div>
+            <div class="snumber_slide">4</div>
+            <div class="snumber_slide">5</div>
+            <div class="snumber_slide">6</div>
+            <div class="snumber_slide">7</div>
+            <div class="snumber_slide">8</div>
+            <div class="snumber_slide">9</div>
+        </div>
+        <div class="numberpannel" style="left: 61.5vh;width:4%">:</div>
+        <!--First of second-->
+        <div class="numberpannel" id="sec1st" style="left:67vh">
+            <div class="snumber_slide">0</div>
+            <div class="snumber_slide">1</div>
+            <div class="snumber_slide">2</div>
+            <div class="snumber_slide">3</div>
+            <div class="snumber_slide">4</div>
+            <div class="snumber_slide">5</div>
+        </div>
+        <!-- Second of second -->
+        <div class="numberpannel" id="sec2st" style="left:81vh">
+            <div class="snumber_slide">0</div>
+            <div class="snumber_slide">1</div>
+            <div class="snumber_slide">2</div>
+            <div class="snumber_slide">3</div>
+            <div class="snumber_slide">4</div>
+            <div class="snumber_slide">5</div>
+            <div class="snumber_slide">6</div>
+            <div class="snumber_slide">7</div>
+            <div class="snumber_slide">8</div>
+            <div class="snumber_slide">9</div>
+        </div>
+        <div class="numberpannel" id="maridizer" style="left:98.5vh">
+            <div class="snumber_slide">AM</div>
+            <div class="snumber_slide">PM</div>
+        </div>
+    </div>
+
+    <script defer type="text/javascript">
+        const firstofHR = document.getElementById('hr1st');
+        const secondofHR = document.getElementById('hr2t');
+        const firstofmin = document.getElementById('min1st');
+        const secondofmin = document.getElementById('min2st');
+        const firstofsec = document.getElementById('sec1st');
+        const secondofsec = document.getElementById('sec2st');
+
+        window.addEventListener('load', function () {
+            console.warn("Welcome fellow power user OwO")
+            //config.initialize()
+            clocktick()
+            setInterval(() => { clocktick() }, 1000)
+        })
+
+        function clocktick() {
+            var date = new Date;
+            //console.log(date.getHours())
+            console.log(date.getHours(), date.getMinutes(), date.getSeconds())
+
+            //Hours
+            switch (date.getHours()) {
+                case 0:// 12am
+                    firstofHR.style.transform = "translatey(-20vh)";
+                    secondofHR.style.transform = "translatey(-40vh)";
+                    document.getElementById('maridizer').style.transform = "translatey(-0vh)";
+                    break;
+                case 1:// 1am
+                    firstofHR.style.transform = "translatey(-0vh)";
+                    secondofHR.style.transform = "translatey(-20vh)";
+                    document.getElementById('maridizer').style.transform = "translatey(-0vh)";
+                    break;
+                case 2:// 2am
+                    firstofHR.style.transform = "translatey(-0vh)";
+                    secondofHR.style.transform = "translatey(-40vh)";
+                    document.getElementById('maridizer').style.transform = "translatey(-0vh)";
+                    break;
+                case 3:// 3am
+                    firstofHR.style.transform = "translatey(-0vh)";
+                    secondofHR.style.transform = "translatey(-60vh)";
+                    document.getElementById('maridizer').style.transform = "translatey(-0vh)";
+                    break;
+                case 4:// 4am
+                    firstofHR.style.transform = "translatey(-0vh)";
+                    secondofHR.style.transform = "translatey(-80vh)";
+                    document.getElementById('maridizer').style.transform = "translatey(-0vh)";
+                    break;
+                case 5:// 5am
+                    firstofHR.style.transform = "translatey(-0vh)";
+                    secondofHR.style.transform = "translatey(-100vh)";
+                    document.getElementById('maridizer').style.transform = "translatey(-0vh)";
+                    break;
+                case 6:// 6am
+                    firstofHR.style.transform = "translatey(-0vh)";
+                    secondofHR.style.transform = "translatey(-120vh)";
+                    document.getElementById('maridizer').style.transform = "translatey(-0vh)";
+                    break;
+                case 7:// 7am
+                    firstofHR.style.transform = "translatey(-0vh)";
+                    secondofHR.style.transform = "translatey(-140vh)";
+                    document.getElementById('maridizer').style.transform = "translatey(-0vh)";
+                    break;
+                case 8:// 8am
+                    firstofHR.style.transform = "translatey(-0vh)";
+                    secondofHR.style.transform = "translatey(-160vh)";
+                    document.getElementById('maridizer').style.transform = "translatey(-0vh)";
+                    break;
+                case 9:// 9am
+                    firstofHR.style.transform = "translatey(-0vh)";
+                    secondofHR.style.transform = "translatey(-180vh)";
+                    document.getElementById('maridizer').style.transform = "translatey(-0vh)";
+                    break;
+                case 10:// 10am
+                    firstofHR.style.transform = "translatey(-20vh)";
+                    secondofHR.style.transform = "translatey(-0vh)";
+                    document.getElementById('maridizer').style.transform = "translatey(-0vh)";
+                    break;
+                case 11:// 11am
+                    firstofHR.style.transform = "translatey(-20vh)";
+                    secondofHR.style.transform = "translatey(-20vh)";
+                    document.getElementById('maridizer').style.transform = "translatey(-0vh)";
+                    break;
+                case 12:// 12pm
+                    firstofHR.style.transform = "translatey(-20vh)";
+                    secondofHR.style.transform = "translatey(-40vh)";
+                    document.getElementById('maridizer').style.transform = "translatey(-20vh)";
+                    break;
+                case 13:// 1pm
+                    firstofHR.style.transform = "translatey(-0vh)";
+                    secondofHR.style.transform = "translatey(-20vh)";
+                    document.getElementById('maridizer').style.transform = "translatey(-20vh)";
+                    break;
+                case 14:// 2pm
+                    firstofHR.style.transform = "translatey(-0vh)";
+                    secondofHR.style.transform = "translatey(-40vh)";
+                    document.getElementById('maridizer').style.transform = "translatey(-20vh)";
+                    break;
+                case 15:// 3pm
+                    firstofHR.style.transform = "translatey(-0vh)";
+                    secondofHR.style.transform = "translatey(-60vh)";
+                    document.getElementById('maridizer').style.transform = "translatey(-20vh)";
+                    break;
+                case 16:// 4pm
+                    firstofHR.style.transform = "translatey(-0vh)";
+                    secondofHR.style.transform = "translatey(-80vh)";
+                    document.getElementById('maridizer').style.transform = "translatey(-20vh)";
+                    break;
+                case 17:// 5pm
+                    firstofHR.style.transform = "translatey(-0vh)";
+                    secondofHR.style.transform = "translatey(-100vh)";
+                    document.getElementById('maridizer').style.transform = "translatey(-20vh)";
+                    break;
+                case 18:// 6pm
+                    firstofHR.style.transform = "translatey(-0vh)";
+                    secondofHR.style.transform = "translatey(-120vh)";
+                    document.getElementById('maridizer').style.transform = "translatey(-20vh)";
+                    break;
+                case 19:// 7pm
+                    firstofHR.style.transform = "translatey(-0vh)";
+                    secondofHR.style.transform = "translatey(-140vh)";
+                    //document.getElementById('1sthr1').style.opacity = "0.8"
+                    document.getElementById('maridizer').style.transform = "translatey(-20vh)";
+                    break;
+                case 20:// 8pm
+                    firstofHR.style.transform = "translatey(-0vh)";
+                    secondofHR.style.transform = "translatey(-160vh)";
+                    document.getElementById('maridizer').style.transform = "translatey(-20vh)";
+                    break;
+                case 21:// 9pm
+                    firstofHR.style.transform = "translatey(-0vh)";
+                    secondofHR.style.transform = "translatey(-180vh)";
+                    document.getElementById('maridizer').style.transform = "translatey(-20vh)";
+                    break;
+                case 22:// 10pm
+                    firstofHR.style.transform = "translatey(-20vh)";
+                    secondofHR.style.transform = "translatey(-0vh)";
+                    document.getElementById('maridizer').style.transform = "translatey(-20vh)";
+                    break;
+                case 23:// 11pm
+                    firstofHR.style.transform = "translatey(-20vh)";
+                    secondofHR.style.transform = "translatey(-20vh)";
+                    document.getElementById('maridizer').style.transform = "translatey(-20vh)";
+                    break;
+            }
+
+            //Minutes
+            switch (date.getMinutes()) {
+                case 0:
+                    firstofmin.style.transform = "translatey(-0vh)";
+                    secondofmin.style.transform = "translatey(-0vh)";
+                    break;
+                case 1:
+                    firstofmin.style.transform = "translatey(-0vh)";
+                    secondofmin.style.transform = "translatey(-20vh)";
+                    break;
+                case 2:
+                    firstofmin.style.transform = "translatey(-0vh)";
+                    secondofmin.style.transform = "translatey(-40vh)";
+                    break;
+                case 3:
+                    firstofmin.style.transform = "translatey(-0vh)";
+                    secondofmin.style.transform = "translatey(-60vh)";
+                    break;
+                case 4:
+                    firstofmin.style.transform = "translatey(-0vh)";
+                    secondofmin.style.transform = "translatey(-80vh)";
+                    break;
+                case 5:
+                    firstofmin.style.transform = "translatey(-0vh)";
+                    secondofmin.style.transform = "translatey(-100vh)";
+                    break;
+                case 6:
+                    firstofmin.style.transform = "translatey(-0vh)";
+                    secondofmin.style.transform = "translatey(-120vh)";
+                    break;
+                case 7:
+                    firstofmin.style.transform = "translatey(-0vh)";
+                    secondofmin.style.transform = "translatey(-140vh)";
+                    break;
+                case 8:
+                    firstofmin.style.transform = "translatey(-0vh)";
+                    secondofmin.style.transform = "translatey(-160vh)";
+                    break;
+                case 9:
+                    firstofmin.style.transform = "translatey(-0vh)";
+                    secondofmin.style.transform = "translatey(-180vh)";
+                    break;
+                case 10:
+                    firstofmin.style.transform = "translatey(-20vh)";
+                    secondofmin.style.transform = "translatey(-0vh)";
+                    break;
+                case 11:
+                    firstofmin.style.transform = "translatey(-20vh)";
+                    secondofmin.style.transform = "translatey(-20vh)";
+                    break;
+                case 12:
+                    firstofmin.style.transform = "translatey(-20vh)";
+                    secondofmin.style.transform = "translatey(-40vh)";
+                    break;
+                case 13:
+                    firstofmin.style.transform = "translatey(-20vh)";
+                    secondofmin.style.transform = "translatey(-60vh)";
+                    break;
+                case 14:
+                    firstofmin.style.transform = "translatey(-20vh)";
+                    secondofmin.style.transform = "translatey(-80vh)";
+                    break;
+                case 15:
+                    firstofmin.style.transform = "translatey(-20vh)";
+                    secondofmin.style.transform = "translatey(-100vh)";
+                    break;
+                case 16:
+                    firstofmin.style.transform = "translatey(-20vh)";
+                    secondofmin.style.transform = "translatey(-120vh)";
+                    break;
+                case 17:
+                    firstofmin.style.transform = "translatey(-20vh)";
+                    secondofmin.style.transform = "translatey(-140vh)";
+                    break;
+                case 18:
+                    firstofmin.style.transform = "translatey(-20vh)";
+                    secondofmin.style.transform = "translatey(-160vh)";
+                    break;
+                case 19:
+                    firstofmin.style.transform = "translatey(-20vh)";
+                    secondofmin.style.transform = "translatey(-180vh)";
+                    break;
+                case 20:
+                    firstofmin.style.transform = "translatey(-40vh)";
+                    secondofmin.style.transform = "translatey(-0vh)";
+                    break;
+                case 21:
+                    firstofmin.style.transform = "translatey(-40vh)";
+                    secondofmin.style.transform = "translatey(-20vh)";
+                    break;
+                case 22:
+                    firstofmin.style.transform = "translatey(-40vh)";
+                    secondofmin.style.transform = "translatey(-40vh)";
+                    break;
+                case 23:
+                    firstofmin.style.transform = "translatey(-40vh)";
+                    secondofmin.style.transform = "translatey(-60vh)";
+                    break;
+                case 24:
+                    firstofmin.style.transform = "translatey(-40vh)";
+                    secondofmin.style.transform = "translatey(-80vh)";
+                    break;
+                case 25:
+                    firstofmin.style.transform = "translatey(-40vh)";
+                    secondofmin.style.transform = "translatey(-100vh)";
+                    break;
+                case 26:
+                    firstofmin.style.transform = "translatey(-40vh)";
+                    secondofmin.style.transform = "translatey(-120vh)";
+                    break;
+                case 27:
+                    firstofmin.style.transform = "translatey(-40vh)";
+                    secondofmin.style.transform = "translatey(-140vh)";
+                    break;
+                case 28:
+                    firstofmin.style.transform = "translatey(-40vh)";
+                    secondofmin.style.transform = "translatey(-160vh)";
+                    break;
+                case 29:
+                    firstofmin.style.transform = "translatey(-40vh)";
+                    secondofmin.style.transform = "translatey(-180vh)";
+                    break;
+                case 30:
+                    firstofmin.style.transform = "translatey(-60vh)";
+                    secondofmin.style.transform = "translatey(-0vh)";
+                    break;
+                case 31:
+                    firstofmin.style.transform = "translatey(-60vh)";
+                    secondofmin.style.transform = "translatey(-20vh)";
+                    break;
+                case 32:
+                    firstofmin.style.transform = "translatey(-60vh)";
+                    secondofmin.style.transform = "translatey(-40vh)";
+                    break;
+                case 33:
+                    firstofmin.style.transform = "translatey(-60vh)";
+                    secondofmin.style.transform = "translatey(-60vh)";
+                    break;
+                case 34:
+                    firstofmin.style.transform = "translatey(-60vh)";
+                    secondofmin.style.transform = "translatey(-80vh)";
+                    break;
+                case 35:
+                    firstofmin.style.transform = "translatey(-60vh)";
+                    secondofmin.style.transform = "translatey(-100vh)";
+                    break;
+                case 36:
+                    firstofmin.style.transform = "translatey(-60vh)";
+                    secondofmin.style.transform = "translatey(-120vh)";
+                    break;
+                case 37:
+                    firstofmin.style.transform = "translatey(-60vh)";
+                    secondofmin.style.transform = "translatey(-140vh)";
+                    break;
+                case 38:
+                    firstofmin.style.transform = "translatey(-60vh)";
+                    secondofmin.style.transform = "translatey(-160vh)";
+                    break;
+                case 39:
+                    firstofmin.style.transform = "translatey(-60vh)";
+                    secondofmin.style.transform = "translatey(-180vh)";
+                    break;
+                case 40:
+                    firstofmin.style.transform = "translatey(-80vh)";
+                    secondofmin.style.transform = "translatey(-0vh)";
+                    break;
+                case 41:
+                    firstofmin.style.transform = "translatey(-80vh)";
+                    secondofmin.style.transform = "translatey(-20vh)";
+                    break;
+                case 42:
+                    firstofmin.style.transform = "translatey(-80vh)";
+                    secondofmin.style.transform = "translatey(-40vh)";
+                    break;
+                case 43:
+                    firstofmin.style.transform = "translatey(-80vh)";
+                    secondofmin.style.transform = "translatey(-60vh)";
+                    break;
+                case 44:
+                    firstofmin.style.transform = "translatey(-80vh)";
+                    secondofmin.style.transform = "translatey(-80vh)";
+                    break;
+                case 45:
+                    firstofmin.style.transform = "translatey(-80vh)";
+                    secondofmin.style.transform = "translatey(-100vh)";
+                    break;
+                case 46:
+                    firstofmin.style.transform = "translatey(-80vh)";
+                    secondofmin.style.transform = "translatey(-120vh)";
+                    break;
+                case 47:
+                    firstofmin.style.transform = "translatey(-80vh)";
+                    secondofmin.style.transform = "translatey(-140vh)";
+                    break;
+                case 48:
+                    firstofmin.style.transform = "translatey(-80vh)";
+                    secondofmin.style.transform = "translatey(-160vh)";
+                    break;
+                case 49:
+                    firstofmin.style.transform = "translatey(-80vh)";
+                    secondofmin.style.transform = "translatey(-180vh)";
+                    break;
+
+                case 50:
+                    firstofmin.style.transform = "translatey(-100vh)";
+                    secondofmin.style.transform = "translatey(-0vh)";
+                    break;
+                case 51:
+                    firstofmin.style.transform = "translatey(-100vh)";
+                    secondofmin.style.transform = "translatey(-20vh)";
+                    break;
+                case 52:
+                    firstofmin.style.transform = "translatey(-100vh)";
+                    secondofmin.style.transform = "translatey(-40vh)";
+                    break;
+                case 53:
+                    firstofmin.style.transform = "translatey(-100vh)";
+                    secondofmin.style.transform = "translatey(-60vh)";
+                    break;
+                case 54:
+                    firstofmin.style.transform = "translatey(-100vh)";
+                    secondofmin.style.transform = "translatey(-80vh)";
+                    break;
+                case 55:
+                    firstofmin.style.transform = "translatey(-100vh)";
+                    secondofmin.style.transform = "translatey(-100vh)";
+                    break;
+                case 56:
+                    firstofmin.style.transform = "translatey(-100vh)";
+                    secondofmin.style.transform = "translatey(-120vh)";
+                    break;
+                case 57:
+                    firstofmin.style.transform = "translatey(-100vh)";
+                    secondofmin.style.transform = "translatey(-140vh)";
+                    break;
+                case 58:
+                    firstofmin.style.transform = "translatey(-100vh)";
+                    secondofmin.style.transform = "translatey(-160vh)";
+                    break;
+                case 59:
+                    firstofmin.style.transform = "translatey(-100vh)";
+                    secondofmin.style.transform = "translatey(-180vh)";
+                    break;
+                default:
+                    firstofmin.style.transform = "translatey(-100vh)";
+                    secondofmin.style.transform = "translatey(-180vh)";
+            }
+
+            //Seconds
+            switch (date.getSeconds()) {
+                case 0:
+                    firstofsec.style.transform = "translatey(-0vh)";
+                    secondofsec.style.transform = "translatey(-0vh)";
+                    break;
+                case 1:
+                    firstofsec.style.transform = "translatey(-0vh)";
+                    secondofsec.style.transform = "translatey(-20vh)";
+                    break;
+                case 2:
+                    firstofsec.style.transform = "translatey(-0vh)";
+                    secondofsec.style.transform = "translatey(-40vh)";
+                    break;
+                case 3:
+                    firstofsec.style.transform = "translatey(-0vh)";
+                    secondofsec.style.transform = "translatey(-60vh)";
+                    break;
+                case 4:
+                    firstofsec.style.transform = "translatey(-0vh)";
+                    secondofsec.style.transform = "translatey(-80vh)";
+                    break;
+                case 5:
+                    firstofsec.style.transform = "translatey(-0vh)";
+                    secondofsec.style.transform = "translatey(-100vh)";
+                    break;
+                case 6:
+                    firstofsec.style.transform = "translatey(-0vh)";
+                    secondofsec.style.transform = "translatey(-120vh)";
+                    break;
+                case 7:
+                    firstofsec.style.transform = "translatey(-0vh)";
+                    secondofsec.style.transform = "translatey(-140vh)";
+                    break;
+                case 8:
+                    firstofsec.style.transform = "translatey(-0vh)";
+                    secondofsec.style.transform = "translatey(-160vh)";
+                    break;
+                case 9:
+                    firstofsec.style.transform = "translatey(-0vh)";
+                    secondofsec.style.transform = "translatey(-180vh)";
+                    break;
+                case 10:
+                    firstofsec.style.transform = "translatey(-20vh)";
+                    secondofsec.style.transform = "translatey(-0vh)";
+                    break;
+                case 11:
+                    firstofsec.style.transform = "translatey(-20vh)";
+                    secondofsec.style.transform = "translatey(-20vh)";
+                    break;
+                case 12:
+                    firstofsec.style.transform = "translatey(-20vh)";
+                    secondofsec.style.transform = "translatey(-40vh)";
+                    break;
+                case 13:
+                    firstofsec.style.transform = "translatey(-20vh)";
+                    secondofsec.style.transform = "translatey(-60vh)";
+                    break;
+                case 14:
+                    firstofsec.style.transform = "translatey(-20vh)";
+                    secondofsec.style.transform = "translatey(-80vh)";
+                    break;
+                case 15:
+                    firstofsec.style.transform = "translatey(-20vh)";
+                    secondofsec.style.transform = "translatey(-100vh)";
+                    break;
+                case 16:
+                    firstofsec.style.transform = "translatey(-20vh)";
+                    secondofsec.style.transform = "translatey(-120vh)";
+                    break;
+                case 17:
+                    firstofsec.style.transform = "translatey(-20vh)";
+                    secondofsec.style.transform = "translatey(-140vh)";
+                    break;
+                case 18:
+                    firstofsec.style.transform = "translatey(-20vh)";
+                    secondofsec.style.transform = "translatey(-160vh)";
+                    break;
+                case 19:
+                    firstofsec.style.transform = "translatey(-20vh)";
+                    secondofsec.style.transform = "translatey(-180vh)";
+                    break;
+                case 20:
+                    firstofsec.style.transform = "translatey(-40vh)";
+                    secondofsec.style.transform = "translatey(-0vh)";
+                    break;
+                case 21:
+                    firstofsec.style.transform = "translatey(-40vh)";
+                    secondofsec.style.transform = "translatey(-20vh)";
+                    break;
+                case 22:
+                    firstofsec.style.transform = "translatey(-40vh)";
+                    secondofsec.style.transform = "translatey(-40vh)";
+                    break;
+                case 23:
+                    firstofsec.style.transform = "translatey(-40vh)";
+                    secondofsec.style.transform = "translatey(-60vh)";
+                    break;
+                case 24:
+                    firstofsec.style.transform = "translatey(-40vh)";
+                    secondofsec.style.transform = "translatey(-80vh)";
+                    break;
+                case 25:
+                    firstofsec.style.transform = "translatey(-40vh)";
+                    secondofsec.style.transform = "translatey(-100vh)";
+                    break;
+                case 26:
+                    firstofsec.style.transform = "translatey(-40vh)";
+                    secondofsec.style.transform = "translatey(-120vh)";
+                    break;
+                case 27:
+                    firstofsec.style.transform = "translatey(-40vh)";
+                    secondofsec.style.transform = "translatey(-140vh)";
+                    break;
+                case 28:
+                    firstofsec.style.transform = "translatey(-40vh)";
+                    secondofsec.style.transform = "translatey(-160vh)";
+                    break;
+                case 29:
+                    firstofsec.style.transform = "translatey(-40vh)";
+                    secondofsec.style.transform = "translatey(-180vh)";
+                    break;
+                case 30:
+                    firstofsec.style.transform = "translatey(-60vh)";
+                    secondofsec.style.transform = "translatey(-0vh)";
+                    break;
+                case 31:
+                    firstofsec.style.transform = "translatey(-60vh)";
+                    secondofsec.style.transform = "translatey(-20vh)";
+                    break;
+                case 32:
+                    firstofsec.style.transform = "translatey(-60vh)";
+                    secondofsec.style.transform = "translatey(-40vh)";
+                    break;
+                case 33:
+                    firstofsec.style.transform = "translatey(-60vh)";
+                    secondofsec.style.transform = "translatey(-60vh)";
+                    break;
+                case 34:
+                    firstofsec.style.transform = "translatey(-60vh)";
+                    secondofsec.style.transform = "translatey(-80vh)";
+                    break;
+                case 35:
+                    firstofsec.style.transform = "translatey(-60vh)";
+                    secondofsec.style.transform = "translatey(-100vh)";
+                    break;
+                case 36:
+                    firstofsec.style.transform = "translatey(-60vh)";
+                    secondofsec.style.transform = "translatey(-120vh)";
+                    break;
+                case 37:
+                    firstofsec.style.transform = "translatey(-60vh)";
+                    secondofsec.style.transform = "translatey(-140vh)";
+                    break;
+                case 38:
+                    firstofsec.style.transform = "translatey(-60vh)";
+                    secondofsec.style.transform = "translatey(-160vh)";
+                    break;
+                case 39:
+                    firstofsec.style.transform = "translatey(-60vh)";
+                    secondofsec.style.transform = "translatey(-180vh)";
+                    break;
+                case 40:
+                    firstofsec.style.transform = "translatey(-80vh)";
+                    secondofsec.style.transform = "translatey(-0vh)";
+                    break;
+                case 41:
+                    firstofsec.style.transform = "translatey(-80vh)";
+                    secondofsec.style.transform = "translatey(-20vh)";
+                    break;
+                case 42:
+                    firstofsec.style.transform = "translatey(-80vh)";
+                    secondofsec.style.transform = "translatey(-40vh)";
+                    break;
+                case 43:
+                    firstofsec.style.transform = "translatey(-80vh)";
+                    secondofsec.style.transform = "translatey(-60vh)";
+                    break;
+                case 44:
+                    firstofsec.style.transform = "translatey(-80vh)";
+                    secondofsec.style.transform = "translatey(-80vh)";
+                    break;
+                case 45:
+                    firstofsec.style.transform = "translatey(-80vh)";
+                    secondofsec.style.transform = "translatey(-100vh)";
+                    break;
+                case 46:
+                    firstofsec.style.transform = "translatey(-80vh)";
+                    secondofsec.style.transform = "translatey(-120vh)";
+                    break;
+                case 47:
+                    firstofsec.style.transform = "translatey(-80vh)";
+                    secondofsec.style.transform = "translatey(-140vh)";
+                    break;
+                case 48:
+                    firstofsec.style.transform = "translatey(-80vh)";
+                    secondofsec.style.transform = "translatey(-160vh)";
+                    break;
+                case 49:
+                    firstofsec.style.transform = "translatey(-80vh)";
+                    secondofsec.style.transform = "translatey(-180vh)";
+                    break;
+
+                case 50:
+                    firstofsec.style.transform = "translatey(-100vh)";
+                    secondofsec.style.transform = "translatey(-0vh)";
+                    break;
+                case 51:
+                    firstofsec.style.transform = "translatey(-100vh)";
+                    secondofsec.style.transform = "translatey(-20vh)";
+                    break;
+                case 52:
+                    firstofsec.style.transform = "translatey(-100vh)";
+                    secondofsec.style.transform = "translatey(-40vh)";
+                    break;
+                case 53:
+                    firstofsec.style.transform = "translatey(-100vh)";
+                    secondofsec.style.transform = "translatey(-60vh)";
+                    break;
+                case 54:
+                    firstofsec.style.transform = "translatey(-100vh)";
+                    secondofsec.style.transform = "translatey(-80vh)";
+                    break;
+                case 55:
+                    firstofsec.style.transform = "translatey(-100vh)";
+                    secondofsec.style.transform = "translatey(-100vh)";
+                    break;
+                case 56:
+                    firstofsec.style.transform = "translatey(-100vh)";
+                    secondofsec.style.transform = "translatey(-120vh)";
+                    break;
+                case 57:
+                    firstofsec.style.transform = "translatey(-100vh)";
+                    secondofsec.style.transform = "translatey(-140vh)";
+                    break;
+                case 58:
+                    firstofsec.style.transform = "translatey(-100vh)";
+                    secondofsec.style.transform = "translatey(-160vh)";
+                    break;
+                case 59:
+                    firstofsec.style.transform = "translatey(-100vh)";
+                    secondofsec.style.transform = "translatey(-180vh)";
+                    break;
+                default:
+                    firstofsec.style.transform = "translatey(-100vh)";
+                    secondofsec.style.transform = "translatey(-180vh)";
+            }
+        }
+
+    </script>
+</body>
+
+</html>

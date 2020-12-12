@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" href="filename. Filextension" type="image/filextension" sizes="32x32">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+<title>SVG terbulence filter</title>
+<style>
+    .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        background-image: url("img/Background2.jpg");
+        background-size: cover;
+    }
+    .background .filter {
+        position: absolute;
+        background-image: url("img/Background2-filter.png");
+        background-size: cover;
+        top:0;
+        left:0;
+        height: 100%;
+        width: 100%;
+        filter: url("#turbulence");/*used to apply the filter to this tag, can be put on any eliment*/
+    }
+</style>
+</head>
+<body>
+    <div class="background"><div class="filter"></div></div><!--The background image and the transparent image filter-->
+    <svg>
+        <filter id="turbulence" x="0" y="0" width="100%" height="100%">
+          <feTurbulence id="sea-filter" numOctaves="3" seed="2" baseFrequency="0.02 0.05"></feTurbulence>
+          <feDisplacementMap scale="20" in="SourceGraphic"></feDisplacementMap>
+          <animate xlink:href="#sea-filter" attributeName="baseFrequency" dur="120s" keyTimes="0;0.5;1" values="0.02 0.06;0.04 0.08;0.02 0.06" repeatCount="indefinite"/>
+        </filter>
+    </svg>
+<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

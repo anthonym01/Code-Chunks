@@ -1,0 +1,112 @@
+body{
+	color:black;
+	background-color:#ffffff;
+}
+.canvascolor{display:none;}
+/*Hiights*/
+a{color:#000000;}
+td,th{border:1px solid black;background:none;}
+.hilight{transition:font-size 0.3s;transition-delay: 0.2s;}
+.hilight:hover{background-color:#66e0ff;border-style:solid;border-width:1px;border-color:#00a3cc;font-size:130%;}
+.timerow1:hover ~ .timerow1slave{background-color:#66e0ff;border-color:#00a3cc;}
+.timerow2:hover ~ .timerow2slave{background-color:#66e0ff;border-color:#00a3cc;}
+.timerow3:hover ~ .timerow3slave{background-color:#66e0ff;border-color:#00a3cc;}
+.timerow4:hover ~ .timerow4slave{background-color:#66e0ff;border-color:#00a3cc;}
+.timerow5:hover ~ .timerow5slave{background-color:#66e0ff;border-color:#00a3cc;}
+.timerow6:hover ~ .timerow6slave{background-color:#66e0ff;border-color:#00a3cc;}
+.timerow7:hover ~ .timerow7slave{background-color:#66e0ff;border-color:#00a3cc;}
+.timerow8:hover ~ .timerow8slave{background-color:#66e0ff;border-color:#00a3cc;}
+.timerow9:hover ~ .timerow9slave{background-color:#66e0ff;border-color:#00a3cc;}
+
+/*Header*/
+.headbar{
+	border-color:#000000;
+	background:none;
+}
+
+/*Table*/
+table{
+	background:none;
+	border:2px solid black;
+}
+
+/*Hover detail panel*/
+.detail_pannel{
+	color:black;
+	background-color:#ffffff;
+}
+
+.detail_pannel table{
+	color:black;
+	background-color:#ffffff;
+}
+
+/*Full detail panel*/
+.full_detail{
+	background-color:#ffffff;
+	border:2px solid black;
+	background-image:url("images/Lined-Paper.png");
+	background-repeat:no-repeat;
+	background-size: 100%;
+}
+
+.full_detail .fulldetail_header{
+	border-bottom:2px solid black;
+}
+
+/*menu structure*/
+.menu{
+	background-color:#ffffff;
+	border-top:1px solid black;
+	border-left:2px solid black;
+}
+.menu_header{
+	border-bottom:2px solid black;
+}
+.menu_container{
+	background-color:#ffffff;
+}
+
+/*Status bar*/
+.status_bar{
+	background:none;
+	border:2px solid black;
+}
+
+/*button structures*/
+.nicebtn{
+	background-color:#cecece;
+	color: #000000;
+	border-color:#a3a3a3;
+}
+.btnholder:hover .nicebtn {
+	background-color: #ff4040;
+	color:#ffffff;
+	border-color:#ca0000;
+}
+
+.menubtn{
+	background-color:#cecece;
+	color: #000000;
+	border-color:#a3a3a3;
+}
+
+.menubtn:hover{
+	background-color:#5b5b5b;
+	color: #ffffff;
+	border-color:#a3a3a3;
+	font-size: 140%;
+}
+
+.contextbtn{
+	background-color:#cecece;
+	color: #000000;
+	border-color:#a3a3a3;
+}
+
+.contextbtn:hover{
+	background-color:#5b5b5b;
+	color: #ffffff;
+	border-color:#a3a3a3;
+	font-size:14pt;
+}

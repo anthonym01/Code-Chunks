@@ -1,0 +1,124 @@
+body{
+	color:white;
+	background-color:#000000;
+}
+.canvascolor{display:block;background-color:#111111;color:white;}
+/*Hiights*/
+
+a{color:white;}
+td,th{border:1px solid white;background:none;}
+.hilight{transition:font-size 0.3s;transition-delay: 0.2s;}
+.hilight:hover{background-color:#00a4cc;border-color:#00a3cc;font-size: 130%;;}
+.timerow1:hover ~ .timerow1slave{background-color:#00a4cc;border-color:#00a3cc;}
+.timerow2:hover ~ .timerow2slave{background-color:#00a4cc;border-color:#00a3cc;}
+.timerow3:hover ~ .timerow3slave{background-color:#00a4cc;border-color:#00a3cc;}
+.timerow4:hover ~ .timerow4slave{background-color:#00a4cc;border-color:#00a3cc;}
+.timerow5:hover ~ .timerow5slave{background-color:#00a4cc;border-color:#00a3cc;}
+.timerow6:hover ~ .timerow6slave{background-color:#00a4cc;border-color:#00a3cc;}
+.timerow7:hover ~ .timerow7slave{background-color:#00a4cc;border-color:#00a3cc;}
+.timerow8:hover ~ .timerow8slave{background-color:#00a4cc;border-color:#00a3cc;}
+.timerow9:hover ~ .timerow9slave{background-color:#00a4cc;border-color:#00a3cc;}
+
+/*Header*/
+.headbar{
+	border-color:#ffffff;
+	color:white;
+	background:none;
+}
+
+/*Table*/
+table{
+	color:white;
+	background:none;
+	border:2px solid white;
+}
+/*Hover detail panel*/
+.detail_pannel{
+	color:white;
+	background-color:#000000;
+}
+
+.detail_pannel table{
+	color:white;
+	background-color:#000000;
+}
+
+/*Full detail panel*/
+.full_detail{
+	border:2px solid white;
+	/*background-image:url("images/paper-black.jpg");*/
+	background-image:url("images/45822.png");
+	background-repeat:no-repeat;
+	background-size: 100%;
+	color:white;
+	background-color:#000000;
+}
+
+.full_detail .fulldetail_header{
+	border-bottom:2px solid white;
+	color:white;
+}
+
+.full_detail .fulldetail_subdivision{
+	color:white;
+}
+
+/*menu structure*/
+.menu{
+	color:white;
+	background-color:#000000;
+	border-top:1px solid white;
+	border-left:2px solid white;
+}
+.menu_header{
+	border-bottom:2px solid white;
+}
+.menu_container{
+	color:white;
+	background-color:#000000;	
+}
+
+/*Status bar*/
+.status_bar{
+	color:white;
+	background:none;
+	border:2px solid white;
+}
+
+/*button structures*/
+.nicebtn{
+	background-color:#5b5b5b;
+	color: #ffffff;
+	border-color:#a3a3a3;
+}
+.btnholder:hover .nicebtn {
+	background-color: #ff4242;
+	color:#000000;
+	border-color:#ca0000;
+}
+
+.menubtn{
+	background-color:#5b5b5b;
+	color: #ffffff;
+	border-color:#a3a3a3;
+}
+
+.menubtn:hover{
+	background-color:#cecece;
+	color: #000000;
+	border-color:#a3a3a3;
+	font-size: 140%;
+}
+
+.contextbtn{
+	background-color:#5b5b5b;
+	color: #ffffff;
+	border-color:#a3a3a3;
+}
+
+.contextbtn:hover{
+	background-color:#cecece;
+	color: #000000;
+	border-color:#a3a3a3;
+	font-size:14pt;
+}

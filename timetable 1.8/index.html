@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+<title>Reactive timetable 1.8</title>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<link id="favicon" rel="icon" href="images/favicon_black.png" type="image/png" sizes="23x23">
+<link rel="stylesheet" href="common.css">
+<link id="theme" rel="stylesheet" href="dark_theme.css">
+<script src="worker.js"></script>
+</head>
+<body>
+<div id="pagecontainer" class=""><!--PAGE CONTAINER-->
+		<div class="headbar">
+			<b>Timetable</b>
+		</div>
+	<div class="table_container"><!--Dynamically constrains table-->
+		<table>
+			<tr><!--HEADING ROW-->
+				<td class="hilight" class="hilight"><a href="#"><b id="liveclock">time-clock-update</b></a></td>
+				<td class="hilight" id="monday" style=""><a href="#"><b>Monday</b></a></td>
+				<td class="hilight" id="tuesday" style=""><a href="#"><b>Tuesday</b></a></td>
+				<td class="hilight" id="wednsday" style=""><a href="#"><b>Wednesday</b></a></td>
+				<td class="hilight" id="thursday" style=""><a href="#"><b>Thursday</b></a></td>
+				<td class="hilight" id="friday" style=""><a href="#"><b>Friday</b></a></td>
+			</tr>
+			<tr><!--8:30 - 9:30 row-->
+				<td class="hilight timerow1" id="830930"><a href="#"><b>8:30 a.m. &nbsp;&nbsp;- &nbsp;&nbsp;9:30 a.m.</b></a></td>
+				<td class="hilight timerow1slave timerow2slave" id="cell1" rowspan="2" onclick="detailpannel.DataStructures();" onmouseover="hoverdetail.DataStructuresB24();" onmouseout="hoverdetail.hide();" style=""><a href="#">Data Structures</a></td>
+				<td class="hilight timerow1slave timerow2slave" id="cell2" onclick="detailpannel.NOCLASS();" onmouseover="hoverdetail.NOCLASS()" onmouseout="hoverdetail.hide();" rowspan="2" style=""><a href="#">NO CLASS</a></td>
+				<td class="hilight timerow1slave timerow2slave" id="cell3" rowspan="2" onclick="detailpannel.SRE();" onmouseover="hoverdetail.SREA22()" onmouseout="hoverdetail.hide();" style=""><a href="#">S.R.E.</a></td>
+				<td class="hilight timerow1slave timerow2slave" id="cell4" onclick="detailpannel.NOCLASS();" onmouseover="hoverdetail.NOCLASS()" onmouseout="hoverdetail.hide();" rowspan="3" style=""><a href="#">NO CLASS</a></td>
+				<td class="hilight timerow1slave timerow2slave" id="cell5" onclick="detailpannel.NOCLASS();" onmouseover="hoverdetail.NOCLASS()" onmouseout="hoverdetail.hide();" style=""><a href="#">NO CLASS</a></td>
+			</tr>
+			<tr><!--9:30 - 10:30 row-->
+				<td class="hilight timerow2" id="9301030"><a href="#"><b>9:30 a.m. &nbsp;&nbsp;- &nbsp;&nbsp;10:30 a.m.</b></a></td>
+				<td class="hilight timerow2slave" rowspan="2" id="cell24" onclick="detailpannel.DiscreteMaths();" onmouseover="hoverdetail.DiscreteMaths()" onmouseout="hoverdetail.hide();" style=""><a href="#">Discrete Maths</a></td>
+			</tr>
+			<tr><!--10:30 - 11:30 row-->
+				<td class="hilight timerow3" id="10301130"><a href="#"><b>10:30 a.m. - &nbsp;&nbsp;11:30 a.m.</b></a></td>
+				<td class="hilight timerow3slave" id="cell6" rowspan="2" onclick="detailpannel.Physics();" onmouseover="hoverdetail.Physics()" onmouseout="hoverdetail.hide();" style=""><a href="#">Physics</a></td>
+				<td class="hilight timerow3slave" id="cell7" rowspan="2" onclick="detailpannel.CLDD();" onmouseover="hoverdetail.CLDDC8()" onmouseout="hoverdetail.hide();" style=""><a href="#">C.L.D.D.</a></td>
+				<td class="hilight timerow3slave" id="cell8" onclick="detailpannel.ASSEMBLY();" onmouseover="hoverdetail.ASSEMBLY()" onmouseout="hoverdetail.hide();" style=""><a href="#">ASSEMBLY</a></td>
+			</tr>
+			<tr><!--11:30 - 12:30 row-->
+				<td class="hilight timerow4" id="11301230"><a href="#"><b>11:30 a.m. - &nbsp;&nbsp;12:30 p.m.</b></a></td>
+				<td class="hilight timerow4slave" id="cell10" onclick="detailpannel.NOCLASS();" onmouseover="hoverdetail.NOCLASS()" onmouseout="hoverdetail.hide();" style=""><a href="#">NO CLASS</a></td>
+				<td class="hilight timerow4slave" id="cell11" onclick="detailpannel.Academicadvisory();" onmouseover="hoverdetail.Academicadvisory()" onmouseout="hoverdetail.hide();" style=""><a href="#">Academic advisory</a></td>
+				<td class="hilight timerow4slave" id="cell25" onclick="detailpannel.NOCLASS();" onmouseover="hoverdetail.NOCLASS()" onmouseout="hoverdetail.hide();" style=""><a href="#">NO CLASS</a></td>
+			</tr>
+			<tr><!--12:30 - 1:30 row-->
+				<td class="hilight timerow5" id="12301330"><a href="#"><b>12:30 p.m. - &nbsp;&nbsp;1:30 p.m.</b></a></td>
+				<td class="hilight timerow5slave" id="cell26" onclick="detailpannel.LUNCH();" onmouseover="hoverdetail.LUNCH()" onmouseout="hoverdetail.hide();" colspan="5" style=""><a href="#">LUNCH</a></td>
+			</tr>
+			<tr><!--1:30 - 2:30 row-->
+				<td class="hilight timerow6" id="13301430"><a href="#"><b>1:30 p.m. &nbsp;&nbsp;- &nbsp;&nbsp;2:30 p.m.</b></a></td>
+				<td class="hilight timerow6slave" id="cell13" onclick="detailpannel.NOCLASS();" onmouseover="hoverdetail.NOCLASS()" onmouseout="hoverdetail.hide();" style=""><a href="#">NO CLASS</a></td>
+				<td class="hilight timerow6slave" id="cell14" rowspan="2" onclick="detailpannel.DataStructures();" onmouseover="hoverdetail.DataStructuresB24()" onmouseout="hoverdetail.hide();" style=""><a href="#">Data Structures</a></td>
+				<td class="hilight timerow6slave" id="cell15" rowspan="4" onclick="detailpannel.PhysicsLab();" onmouseover="hoverdetail.PhysicsLab()" onmouseout="hoverdetail.hide();" style=""><a href="#">Physics Lab</a></td>
+				<td class="hilight timerow6slave" id="cell16" rowspan="2" onclick="detailpannel.Ethics();" onmouseover="hoverdetail.EthicsC13()" onmouseout="hoverdetail.hide();" style=""><a href="#">Ethics</a></td>
+				<td class="hilight timerow6slave" id="cell17" rowspan="2" onclick="detailpannel.AcademicWriting();" onmouseover="hoverdetail.AcademicWriting()" onmouseout="hoverdetail.hide();" style=""><a href="#">Academic <br>Writing</a></td>
+			</tr>
+			<tr><!--2:30 - 3:30 row-->
+				<td class="hilight timerow7" id="14301530"><a href="#"><b>2:30 p.m. &nbsp;&nbsp;- &nbsp;&nbsp;3:30 p.m.</b></a></td>
+				<td class="hilight timerow7slave" id="cell18" onclick="detailpannel.Ethics();" onmouseover="hoverdetail.EthicsC12()" onmouseout="hoverdetail.hide();"  style=""><a href="#">Ethics</a></td>
+			</tr>
+			<tr><!--3:30 - 4:30 row-->
+				<td class="hilight timerow8" id="15301630"><a href="#"><b>3:30 p.m. &nbsp;&nbsp;- &nbsp;&nbsp;4:30 p.m.</b></a></td>
+				<td class="hilight timerow8slave" id="cell19" onclick="detailpannel.NOCLASS();" onmouseover="hoverdetail.NOCLASS()" onmouseout="hoverdetail.hide();" style=""><a href="#">NO CLASS</a></td>
+				<td class="hilight timerow8slave" id="cell20" onclick="detailpannel.NOCLASS();" onmouseover="hoverdetail.NOCLASS()" onmouseout="hoverdetail.hide();" rowspan="2" style=""><a href="#">NO CLASS</a></td>
+				<td class="hilight timerow8slave" id="cell21" rowspan="2" onclick="detailpannel.CLDD();" onmouseover="hoverdetail.CLDDB26()" onmouseout="hoverdetail.hide();" style=""><a href="#">C.L.D.D.</a></td>
+				<td class="hilight timerow8slave" id="cell22" rowspan="2" onmouseover="hoverdetail.ACTIVITY()" onmouseout="hoverdetail.hide();" style=""><a href="#">ACTIVITY</a></td>
+			</tr>
+			<tr><!--4:30 - 5:30 row-->
+				<td class="hilight timerow9" id="16301730"><a href="#"><b>4:30 p.m. &nbsp;&nbsp;- &nbsp;&nbsp;5:30 p.m.</b></a></td>
+				<td class="hilight timerow9slave" id="cell23" onclick="detailpannel.SRE();" onmouseover="hoverdetail.SREA21()" onmouseout="hoverdetail.hide();" style=""><a href="#">S.R.E.</a></td>
+			</tr>
+			<tr>
+				<td class="hilight" id="nonschoolhour" colspan="6" style=""><a href="#"><b>NON SCHOOL HOUR</b></a></td>
+			</tr>
+		</table>
+		<br>
+		<div><!--CLASS DETAILS CONTAINER-->
+			<table>
+				<tr class="half">
+					<td class="half" id="current_class_header">Current class</td>
+					<td class="half" id="next_class_header">Next class</td>
+				</tr>
+				<tr class="half">
+					<td class="half" id="current_class">Current class details small</td>
+					<td class="half" id="next_class">Next class details small</td>
+				</tr>
+			</table>
+		</div>
+		<br>
+		<div id="display_pannel" class="detail_pannel" style=""><!--Detail pop up-->
+			<table style="border-radius: 25px;">
+				<tr>
+					<td style="border-radius:25px 25px 0px 0px;">Details</td>
+				</tr>
+				<tr>
+					<td style="border-radius: 0px 0px 25px 25px;" id="detailsubject">Details</td>
+				</tr>
+			</table>
+		</div>
+		<div id="fulldetail" class="full_detail"  style=""><!--Overpannel-->
+			<div class="fulldetail_header"><span id="detailtitle">full-detail-pannel-placeholder</span> <img id="xbtn" style="height:40px" onclick="detailpannel.hide()" onmouseover="detailpannel.hoveron();" onmouseout="detailpannel.hoverout();" src="images/redx.png" align="right" alt="Exit button broke"></div>
+			<div id="detaildisplay" class="fulldetail_subdivision">
+				placeholder body
+			</div>
+		</div>
+		<div class="menu"><!--MENU-->
+			<div class="menu_header">Menu</div>
+			<div class="menu_container">
+				<button onclick="detailpannel.setting();" class="menubtn">Settings</button><br>
+				<button onclick="detailpannel.isims();" class="menubtn">iSIMS</button><br>
+				<button onclick="detailpannel.about();" class="menubtn">About</button><br>
+				<button onclick="detailpannel.debug();" class="menubtn">Debug</button><br>
+			</div>
+		</div>
+		<div class="status_bar" id="statusbar" style=""><!--Status bar-->
+			status pop-up
+		</div>
+	</div>
+	<div style="position:fixed;top:0;right:0;height:100%;width:100%;z-index:-1;"><canvas id="c"></canvas><script src="rain.js"></script></div>
+</div><!--PAGE CONTAINER ENDS-->
+</body>
+</html>

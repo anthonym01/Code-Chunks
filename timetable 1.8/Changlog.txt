@@ -1,0 +1,9 @@
+1.0 - First working prototype
+1.1 - timetable tracks current class, time and date
+1.2 - classes highlight at appropriate times.
+1.3 - Current and next class details
+1.4 - Code revised. Power Efficency increased, at the expence of a few mb of memory
+1.5 - pop-up details pannel added.
+1.6 - Detail page onclicking cell, Code revised - decision making decreased, auto scaling improved, visual effects added
+1.7 - menu re-structured, new effects added.
+1.8 - Canvas added to dark theme

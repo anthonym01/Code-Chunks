@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <link rel="stylesheet" type="text/css" href="Notification_resourses/notification.css">
+    <title>In page notification example</title>
+
+</head>
+
+<body>
+    <div class="showcase">
+
+        <button id="test1">Normal</button>
+        <button id="test2">Imbeded function</button>
+
+    </div>
+
+    <script type="text/javascript" src="Notification_resourses/notification.js"></script>
+    <script type="text/javascript">
+
+        //(title, body, hover_title, ifunction)
+        document.getElementById('test1').addEventListener('click', function () {
+            notify.new('Notification', 'A basic notification', 'Click me to dismiss me');
+        });
+
+        document.getElementById('test2').addEventListener('click', function () {
+            notify.new('Notification', 'A notification with an imbedded function', 'Click me to do a thing', function () { alert('You clicked, and i did a thing, as promised') });
+        });
+
+        window.addEventListener('load', () => {
+            notify.new('Notification', 'Page loaded');
+        });
+
+    </script>
+</body>
+
+</html>
