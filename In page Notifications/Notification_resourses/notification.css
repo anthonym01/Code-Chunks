@@ -3,7 +3,6 @@
     Email:samuelmatheson15@gmail.com
 */
 
-
 @keyframes stretch {
     from {
         width: 0%
@@ -19,18 +18,23 @@
     bottom: 0.2rem;
     right: 0.5rem;
     height: 9rem;
-    width: 20rem; /*320px at default zoom*/
+    width: 20rem;
+    /*320px at default zoom*/
     transform: translateX(22rem);
     background-color: rgba(0, 0, 0, 1);
     color: rgb(255, 255, 255);
     overflow: hidden;
     box-shadow: 0 0 0.2rem 0 #00ccff;
     cursor: pointer;
-    transition: transform 500ms, box-shadow 200ms,opacity 200ms;
+    transition: transform 500ms, box-shadow 200ms, opacity 200ms, height 300ms, width 300ms;
     -webkit-user-select: none;
 }
 
-.notification:hover { box-shadow: 0 0 1rem 0 #00ccff; }
+.notification:hover {
+    box-shadow: 0 0 1rem 0 #00ccff;
+    height: 18rem;
+    width: 40rem;
+}
 
 .notification .title {
     position: absolute;
@@ -95,7 +99,7 @@
 
 .x-button::before {
     /*Left */
-    right:45%;
+    right: 45%;
     transform: rotate(-45deg);
 }
 
@@ -105,9 +109,15 @@
     transform: rotate(45deg);
 }
 
-.x-button:hover::before { transform: rotate(-230deg); }
+.x-button:hover::before {
+    transform: rotate(-230deg);
+}
 
-.x-button:hover::after { transform: rotate(230deg); }
+.x-button:hover::after {
+    transform: rotate(230deg);
+}
 
 .x-button:hover::before,
-.x-button:hover::after { box-shadow: 0 0 0.3rem 0 #fff; }
+.x-button:hover::after {
+    box-shadow: 0 0 0.3rem 0 #fff;
+}
