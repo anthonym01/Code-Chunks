@@ -1,0 +1,288 @@
+/* Global constants */
+:root {
+    --bgColor: #3C2C3E;
+    --primaryAccent:#59405C;
+    --primaryColor: #B52B65;
+    --titleBgColor: #F8C3FF;
+    --borderStyle:dashed;
+    --showDetails: none;
+}
+
+body {
+    background:var(--bgColor);
+    margin:0px;
+    padding:0px;
+    overflow:hidden;
+}
+
+/* Side Navigation Bar */
+#sidenav {
+    background:var(--primaryAccent);
+    width:55px;
+    height:100vh;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Side Navigation Bar Open State */
+#sidenav.open {
+    width:80px;
+}
+
+.sidenav-items {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* Each item in the sidenavigationbar */
+.sidenav-item {
+    /* do something here */
+}
+
+/* Power button */
+#power {
+    position: absolute;
+    bottom:5px;
+}
+
+/* Title bar container */
+#main-title {
+    background:var(--primaryColor);
+    color:white;
+    height:40px;
+    display:flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* The title bar burger icon */
+#main-title img {
+    position: absolute;
+    left:15px;
+}
+
+#main-title button{
+    position:absolute;
+    right:15px;
+    background:none;
+    color:white;
+    border:none;
+}
+
+#main-title button:hover {
+    color:var(--primaryAccent);
+}
+
+/* Absolutely positioned container with the main content as child */
+.container {
+    position: absolute;
+    top: 0px;
+    left:55px;
+    width:calc(100% - 55px);
+    height:100%;
+}
+
+/* Container for the main content of the app */
+#main-content {
+    width:100%;
+    height: calc(100% - 40px);
+    position:relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* Container for dragging and drop files */
+#dragarea {
+    width:48%;
+    height:65%;
+    background:var(--primaryAccent);
+    min-width: 350px;
+    min-height:250px;
+    position: relative;
+    border: 3px var(--borderStyle) grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Invisible file input button */
+#dragarea #file-selector {
+    opacity:0;
+    width:100%;
+    height:100%;
+    position: absolute;
+}
+
+/* Upload image */
+#dragarea img {
+    display:block;
+}
+
+/* Drag here text */
+#dragarea span {
+    color:white;
+    text-align: center;
+    display:block;
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+.isdraggedover {
+    --borderStyle: solid;
+}
+
+/* Thumbnail of a single image container */
+#sThumbnail {
+    width:100%;
+    height: 100%;
+    background:crimson;
+    position:relative;
+    flex-flow:column;
+}
+
+/* The image uploaded */
+#uploadedImage {
+    width:100%;
+    height:100%;
+    opacity: 1;
+    transition: .4s ease-in-out;
+}
+
+/* Size container of the image */
+#sThumbnail [name='size'] {
+    position: absolute;
+    opacity:0;
+    z-index:1;
+    border-radius:5px;
+    width:150px;
+    height:25px;
+    left:50%;
+    top:10px;
+    transform:translateX(-50%); 
+    background:rgba(255, 255, 255, 0.51);
+    transition:.4s ease-in-out;
+}
+
+/* Remove image button  */
+#removeBtn {
+    opacity: 0;
+    position: absolute;
+    z-index:1;
+    height:50%;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    transition:0.4s ease-in-out
+}
+
+#removeBtn:hover {
+    height:55%;
+}
+
+/* Name of uploaded image container */
+#sThumbnail [name='name'] {
+    position: absolute;
+    opacity:0;
+    z-index: 1;
+    border-radius:5px;
+    width:300px;
+    height: 25px;
+    left:50%;
+    bottom:10px;
+    transform:translateX(-50%); 
+    background:rgba(255, 255, 255, 0.51);
+    transition:.4s ease-in;
+}
+
+#sThumbnail:hover > [name='size'] {
+    opacity: 1;
+}
+
+#sThumbnail:hover #removeBtn {
+    opacity:1;
+}
+
+#sThumbnail:hover > [name='name'] {
+    opacity: 1;
+}
+
+/* Blurs on hover */
+#sThumbnail:hover #uploadedImage {
+    filter: blur(2px);
+}
+
+.options_container {
+    width: 48%;
+    height: 65%;
+    background-color: var(--primaryAccent);
+}
+
+.options {
+    border: 1.5px solid grey;
+    border-radius: 5px;
+    height:55px;
+    width:75%;
+    position: relative;
+    margin:auto;
+    margin-bottom:30px;
+    display:flex;
+    align-items:center;
+    justify-content: space-around;
+}
+
+.options span{
+    color: var(--titleBgColor);
+    position: absolute;
+    background:var(--bgColor);
+    top:-10px;
+    left:15px;
+}
+
+.options input[type='text'] {
+    border-radius:3px;
+    width:40%;
+    height:30px;
+    text-indent: 10px;
+    border:0px none;
+}
+
+.convert {
+    height:40px;
+    width:300px;
+    margin:auto;
+    margin-bottom:10px;
+}
+
+.convert button{
+    width:100%;
+    height:100%;
+}
+/* .options input {
+    margin-right:10px;
+}
+.options div {
+    color:white;
+    display:flex;
+}
+
+.options > input {
+    width:100%;
+    height:100%;
+    position:absolute;
+    background:var(--bgColor);
+    border-style:none;
+    color:white;
+    text-indent: 10px;;
+} */

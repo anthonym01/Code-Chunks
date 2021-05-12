@@ -1,0 +1,99 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- <script src="eel.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+</head>
+
+<body>
+    <div id="sidenav">
+        <div class="sidenav-items">
+            <div class="sidenav-item">
+                <img src="assets/image-white.png" width=30px height=25px>
+            </div>
+            <div class="sidenav-item">
+                <img src="assets/music-white.png" width=25px height=30px>
+            </div>
+            <div class="sidenav-item">
+                <img src="assets/video-white.png" width=28px height=28px>
+            </div>
+            <div class="sidenav-item">
+                <img src="assets/settings-white.png" width=28px height=28px>
+            </div>
+        </div>  
+
+        <div id='power' title="Power">
+            <img src="assets/power.png" width=28px height=28px>
+        </div>
+             
+    </div>
+
+    <div class="container">
+        <div id="main-title">
+            <img src="assets/menu-white.png" width=28px height=20px alt="">
+            Image Converter
+            <template v-if="!files.length">
+                <button onclick="">convert</button>
+            </template>
+        </div>
+        <div id="main-content">
+            <div id="dragarea" class='drag-area'>
+                <template v-if='!files.length'>
+                    {{ updateBorderStyle('dashed') }}
+                    <input type="file" id='file-selector'>
+                    <img src="assets/upload-white.png" width=inherit height=inherit>
+                    <span>Drag images here or click to add..</span>
+                </template>
+
+                <template v-else-if='files.length === 1'>
+                    <div id='sThumbnail'>
+                        <span name='size'></span>
+                        <span name='name'></span>
+                        <img src="assets/Remove.png" id='removeBtn' @click='removeItem($event)'>
+                        <img id='uploadedImage'>
+                        {{ updateThumbnail('single') }}
+                    </div>
+                </template>
+
+                <template  v-else-if='files.length >= 1'>
+                </template>
+                
+            </div>
+            <div class="options_container">
+                <template v-if="files.length">
+                    <div class='options'>
+                        <span>[Converion Format]</span>
+                        <div><input type="radio" name='format'> PNG</div>
+                        <div><input type="radio" name='format'> JPG</div>
+                        <div><input type="radio" name='format'> ICO</div>
+                        <div><input type="radio" name='format'> GIF</div>
+                        <!-- <div><input type="radio" name='format'> ICNS</div> -->
+                    </div>
+                    <div class='options'>
+                        <span>[Converion Resolution]</span>
+                        <input type="text" placeholder="Width">
+                        <input type="text" placeholder="Height">
+                        <!-- <div class="options" style='height:30px;width:40%;left:20px;position:absolute;top:15px;background:crimson;'>
+                            <input type="text">
+                            <span>Width</span>
+                        </div>
+
+                        <div class="options" style='height:30px;width:40%;right:20px;position:absolute;top:15px;background:crimson;'>
+                            <input type="text">
+                            <span>Height</span>
+                        </div> -->
+                    </div>
+                    <div class='options'>
+                        <span>[Converion Format]</span>
+                    </div>
+                    <div class="spacer"></div>
+                </template>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src='scripts/main.js'></script>
+</body>
+
+</html>
