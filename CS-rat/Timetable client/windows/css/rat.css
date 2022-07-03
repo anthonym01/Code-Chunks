@@ -1,0 +1,196 @@
+@font-face {
+    font-family: Lexend_Deca;
+    src: url(../fonts/LexendDeca-Regular.ttf);
+}
+
+:root {
+    --text-color: rgb(0, 0, 0);
+    --background-color: rgb(255, 255, 255);
+    --accent_color: rgb(0, 153, 255);
+    --grey: rgb(122, 122, 122);
+    --off_grey: rgb(205, 205, 205);
+    --half_grey: rgb(165, 165, 165);
+    --folder: url('../img/fileicons/folder_black.webp');
+    --file: url('../img/fileicons/file_black.webp');
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-color: rgb(255, 255, 255);
+        --background-color: rgb(0, 0, 0);
+        --accent_color: rgb(0, 153, 255);
+        --grey: rgb(122, 122, 122);
+        --off_grey: rgb(50, 50, 50);
+        --half_grey: rgb(90, 90, 90);
+        --folder: url('../img/fileicons/folder_white.webp');
+        --file: url('../img/fileicons/file_white.webp');
+    }
+}
+
+body {
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 1.5vh;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--off_grey);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--half_grey);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: var(--grey);
+}
+
+.view {
+    position: relative;
+    height: fit-content;
+    width: 100%;
+    display: block;
+    margin-bottom: 1em;
+}
+
+.title {
+    position: relative;
+    height: auto;
+    width: 100%;
+    line-height: 100%;
+    font-size: 1.5em;
+    margin-bottom: 0.3em;
+    text-align: center;
+}
+
+/* Webcam */
+
+#webcam_preview {
+    position: relative;
+    height: 40vw;
+    width: 100%;
+    background-color: var(--off_grey);
+    border: 0.5vw dashed var(--off_grey);
+    box-sizing: border-box;
+}
+
+.btn_wrapper {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.video_btn {
+    height: auto;
+    width: auto;
+    line-height: 100%;
+    word-wrap: none;
+    white-space: nowrap;
+    background-color: var(--text-color);
+    color: var(--background-color);
+    font-size: 1.5em;
+    padding: 0.2em;
+    margin: 0.2em;
+    border: none;
+    border-radius: 0.2em;
+    cursor: pointer;
+}
+
+
+/* Directories */
+#dirbox {
+    position: relative;
+    height: 40vw;
+    width: 100%;
+    background-color: var(--off_grey);
+    border: 0.5vw dashed var(--off_grey);
+    overflow: auto;
+    box-sizing: border-box;
+}
+
+.directory {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    position: relative;
+    height: 2em;
+    width: 90%;
+    margin-left: 5%;
+    cursor: pointer;
+}
+
+.dir_icon,
+.file_icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2em;
+    width: 2em;
+    background-image: var(--folder);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.file_icon {
+    background-image: var(--file);
+}
+
+.filename {
+    position: absolute;
+    top: 0;
+    left: 2em;
+    width: calc(100% - 2em);
+    line-height: 100%;
+    font-size: 1.3em;
+}
+
+#back_a_dir {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5%;
+    height: 100%;
+    background-color: var(--background-color);
+    cursor: pointer;
+    z-index: 10;
+}
+
+#back_a_dir::after {
+    position: absolute;
+    top: calc(50% - 1.5vw);
+    left: 2vw;
+    content: "";
+    height: 2vw;
+    width: 2vw;
+    border-top: 0.5vw solid var(--text-color);
+    border-left: 0.5vw solid var(--text-color);
+    transform: rotate(-45deg);
+}
+
+/* Keylog */
+#keybox {
+    position: relative;
+    height: 40vw;
+    width: 100%;
+    background-color: var(--off_grey);
+    border: 0.5vw dashed var(--off_grey);
+    overflow: auto;
+    box-sizing: border-box;
+}
+
+.keyholder {
+    position: relative;
+    float: left;
+    height: auto;
+    width: auto;
+    padding: 0.3em;
+    font-size: 1em;
+}

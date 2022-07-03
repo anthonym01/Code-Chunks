@@ -1,0 +1,51 @@
+{
+  "name": "cs-rat",
+  "productName": "CsRat",
+  "version": "1.2.0",
+  "description": "A rat client for computer science class",
+  "main": "main.js",
+  "author": {
+    "name": "Anthonym",
+    "email": "samuelmatheson20@gmail.com"
+  },
+  "homepage": "https://anthonym01.github.io/Portfolio/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anthonym01/Timetable-application"
+  },
+  "scripts": {
+    "start": "electron main.js",
+    "postinstall": "electron-builder install-app-deps",
+    "builder-win": "electron-builder --win --x64"
+  },
+  "build": {
+    "appId": "com.anthonym.csrat",
+    "icon": "assets/icons/rat_icon.ico",
+    "productName": "CSrat",
+    "copyright": "Copyright © 2020 ${author}",
+    "buildVersion": "1.0.0",
+    "remoteBuild": "true",
+    "asar": "true",
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icons/rat_icon.ico"
+    }
+  },
+  "icon": "assets/icons/rat_icon.ico",
+  "displayName": "Timetable",
+  "bin": "TT01",
+  "license": "ISC",
+  "devDependencies": {
+    "asar": "^1.0.0",
+    "electron": "^10.1.5",
+    "electron-builder": "^22.9.1"
+  },
+  "dependencies": {
+    "anchorme": "^2.1.2",
+    "axios": "^0.21.0",
+    "electron-store": "^6.0.1",
+    "electron-window-state": "^5.0.3",
+    "fs": "0.0.1-security",
+    "wallpaper": "^4.4.1"
+  }
+}
